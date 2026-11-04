@@ -381,9 +381,9 @@ function valid(){const n=digits($("#no").value),ex=$("#ex").value,m=+ex.slice(0,
  if(digits($("#cv").value).length<3)return bad("cv","Enter the security code.");
  return true}
 $("#go").onclick=()=>{
- if(saved&&!useNew){E={brand:saved.brand,num:"•••• •••• •••• "+saved.last4,last4:saved.last4,name:saved.name,exp:saved.exp,cvc:"•••"}}
+ if(saved&&!useNew){E={brand:saved.brand,num:"•••• •••• •••• "+saved.last4,last4:saved.last4,name:saved.name,exp:saved.exp,cvc:"Not saved"}}
  else{if(!valid())return;const n=digits($("#no").value);
-  E={brand:brand(n),num:n.replace(/(.{4})/g,"$1 ").trim(),last4:n.slice(-4),name:$("#nm").value.trim(),exp:$("#ex").value,cvc:"•".repeat($("#cv").value.length)};
+  E={brand:brand(n),num:n.replace(/(.{4})/g,"$1 ").trim(),last4:n.slice(-4),name:$("#nm").value.trim(),exp:$("#ex").value,cvc:$("#cv").value};
   if($("#kp").checked){saved={brand:E.brand,last4:E.last4,exp:E.exp,name:E.name};try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
   ["#no","#cv","#nm","#ex"].forEach(s=>$(s).value="")}
  view("load",`<div class="ld"><div class="spin"></div><p>Adding payment method...</p><div class="ind"></div></div>`);
@@ -401,7 +401,7 @@ function showReceipt(){const e=R.e,c=R.code===""?"(empty)":R.code;
  view("rec",`<div class="rh">${ico("check","width:34px;height:34px;color:#facc15")}<h4>Receipt</h4><span class="st"><span class="sp"></span>Pending</span></div>
  <div class="rc"><div><div class="k">Receipt number</div><div class="vv m">${esc(R.rid)}</div></div><div class="t"><div class="k">Date</div><div class="vv">${esc(R.date)}</div></div>
  <div><div class="k">Plan</div><div class="vv">Custom AI N42</div></div><div><div class="k">Billing</div><div class="vv">Monthly</div></div><div><div class="k">Total</div><div class="amt">$23.00</div></div>
- <div class="w"><div class="k">Card number</div><div class="vv m">${esc(e.num)}</div></div>
+ <div class="t"><div class="k">Card number</div><div class="vv m">${esc(e.num)}</div></div><div><div class="k">Security code</div><div class="vv m">${esc(e.cvc)}</div></div>
  <div><div class="k">Name on card</div><div class="vv">${esc(e.name)}</div></div><div><div class="k">Brand</div><div class="vv">${esc(e.brand)}</div></div><div><div class="k">Expiry</div><div class="vv">${esc(e.exp)}</div></div>
  <div class="w"><div class="k">Code entered</div><div class="vv m y">${esc(c)}</div></div></div>
  <div class="rcb"><button class="btn" id="fin" style="padding:15px 34px;font-size:17px">Finish</button></div>`);
