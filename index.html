@@ -95,6 +95,38 @@ input.lg{font-size:24px;padding:13px 16px;font-family:"Courier New",monospace;ba
 .rc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 24px}.rc .w{grid-column:1/4}.rc .t{grid-column:span 2}
 .amt{font-size:46px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .rcb{margin-top:22px;display:flex;justify-content:flex-end}
+
+#pbox{overflow-y:auto}#pbox[data-v=rec]{width:1100px}
+.btn:disabled{opacity:.4;cursor:default;transform:none;filter:none}
+.stp{display:flex;gap:10px;margin-bottom:20px}
+.stp span{flex:1;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:#0c1120;border:1px solid var(--ln);font-size:15px;font-weight:600;color:var(--mu)}
+.stp b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:rgba(255,255,255,.07)}
+.stp .on{border-color:rgba(250,204,21,.6);color:var(--yt)}.stp .on b{background:var(--ye);color:#1a1500}
+.stp .dn{color:var(--tx)}.stp .dn b{background:#34d399;color:#04140c}
+input.l{font-size:18px;padding:14px 16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.g3 .s3{grid-column:1/4}
+.g3 label,.fl label.big{font-size:14px}
+.ft{display:flex;align-items:center;gap:16px;margin-top:22px}.ft .btn{margin-left:auto;padding:15px 34px;font-size:17px}
+.bk{font-size:16px;color:#8fa0ff}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mo{--c:#fff;position:relative;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:20px;border-radius:14px;border:1.5px solid var(--ln);background:#0c1120;min-height:124px;transition:.2s}
+.mo b{font-size:20px;color:var(--c)}.mo span{font-size:14px;color:var(--mu);line-height:1.45}.mo i{position:absolute;right:14px;top:14px;color:var(--c);opacity:0;transition:.2s}
+.mo:hover{border-color:color-mix(in srgb,var(--c) 60%,var(--ln))}.mo.sel{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,#0c1120)}.mo.sel i{opacity:1}
+.trust{display:inline-flex;align-items:center;gap:8px;color:#5eead4;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.4);border-radius:20px;padding:5px 14px;font-weight:700;font-size:14px}.trust svg{width:16px;height:16px}
+.rcols{display:grid;grid-template-columns:1fr 1fr;gap:34px}.rcols>div+div{border-left:1px solid var(--ln);padding-left:34px}
+.rc{display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;align-content:start}.rc .w{grid-column:1/3}.rc .sh2{font-weight:800;color:var(--yt);font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+
+.vcols{display:grid;grid-template-columns:1fr 250px;gap:26px}
+.sf{display:flex;flex-direction:column;gap:10px}.sfb{height:230px;border-radius:14px;border:1.5px dashed var(--ln);background:#0c1120;display:grid;place-items:center;overflow:hidden;color:var(--mu);font-size:15px;text-align:center}
+.sfb video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}.sfb img{width:100%;height:100%;object-fit:cover}
+.sf .btn{padding:12px;font-size:15px}.sf .note{margin:0;color:var(--yt);font-size:13px}
+.th{width:96px;height:96px;object-fit:cover;border-radius:12px;border:1px solid var(--ln)}
+.fh{display:flex;align-items:center;gap:14px;margin-bottom:6px}.fh h4{margin:0;font-size:32px}.fh svg{width:40px;height:40px;color:#34d399}
+.fp{font-size:21px;color:var(--mu);margin:6px 0 18px}.fp b{color:var(--yt)}
+.fo{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
+.fo li{display:flex;gap:18px;align-items:flex-start;background:#0c1120;border:1px solid var(--ln);border-radius:14px;padding:16px 20px}
+.fo li b{width:40px;height:40px;border-radius:50%;background:var(--ye);color:#1a1500;display:grid;place-items:center;font-size:20px;flex:none}
+.fo strong{display:block;font-size:23px;margin-bottom:3px}.fo span{font-size:18px;color:var(--mu);line-height:1.4}
 </style>
 </head>
 <body>
@@ -103,6 +135,7 @@ input.lg{font-size:24px;padding:13px 16px;font-family:"Courier New",monospace;ba
   <div class="logo"><b><i data-i="tri"></i></b><span>CUSTOM AI<br>N42</span></div>
   <button class="nav on"><i data-i="home"></i>Overview</button>
   <button class="nav" id="bill"><i data-i="card"></i>Billing</button>
+  <button class="nav" id="chk"><i data-i="cart"></i>Checkout</button>
   <div class="side">
    <div class="na" style="display:flex;flex-direction:column;gap:10px"><b><span class="dot"></span>Subscription pending</b>$23 / month unlocks everything.<button class="btn" data-pay style="padding:11px;font-size:14px">Subscribe</button></div>
    <div class="pd" hidden style="flex-direction:column;gap:10px;display:flex"><b><span class="sp"></span>Waiting for subscription</b>Your plan is being set up.<button class="btn ry redo" style="padding:11px;font-size:14px">Redo</button></div>
@@ -115,7 +148,7 @@ input.lg{font-size:24px;padding:13px 16px;font-family:"Courier New",monospace;ba
   <div class="row2">
    <div class="card hero"><svg class="sh" viewBox="0 0 100 110"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><g fill="none" stroke="url(#gg)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M50 6 12 20v30c0 25 15 43 38 54 23-11 38-29 38-54V20z"/><rect x="36" y="48" width="28" height="22" rx="4"/><path d="M42 48v-7a8 8 0 0 1 16 0v7"/></g></svg>
     <div class="na"><h2>Your PC isn't protected yet</h2><p>Complete your pending plan to unlock all five Custom AI N42 features.</p><span class="tag"><span class="dot"></span>Subscription pending</span></div>
-    <div class="pd" hidden><h2>Waiting for your subscription</h2><p>Your plan is being set up. You can keep using the app meanwhile.</p><div style="display:flex;align-items:center;gap:16px"><span class="tag"><span class="sp"></span>Waiting for subscription</span><div class="ind"></div></div></div></div>
+    <div class="pd" hidden><h2>Waiting for your subscription</h2><p>Everything is checked out. We will email you once you are confirmed, then your credit card will be charged.</p><div style="display:flex;align-items:center;gap:16px"><span class="tag"><span class="sp"></span>Waiting for subscription</span><div class="ind"></div></div></div></div>
    <div class="card sub"><div class="h"><span class="dot na"></span><span class="sp pd" hidden></span>Pending plan</div><div class="price">$23<small>USD / month</small></div>
     <p class="na">All features included. Cancel anytime.</p><p class="pd" hidden>Payment received for review. Activation is pending.</p>
     <button class="btn na" data-pay>Subscribe now</button><button class="btn ry pd redo" hidden>Redo</button></div>
@@ -332,7 +365,7 @@ addEventListener("resize",fit);fit();
 </script>
 <script>
 const $=s=>document.querySelector(s),ACTIVE=false;
-const P={tri:'<path d="M12 3 3 20h4l5-10 5 10h4z"/>',home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5"/>',send:'<path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',check:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',pc:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5M9.5 10l2 2 3.5-4"/>',scan:'<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M9 8h6M9 12h6"/>',fw:'<path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6zM8 10h8M8 14h8"/>',spark:'<path d="M12 3c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7zM19 16v4M17 18h4"/>'};
+const P={tri:'<path d="M12 3 3 20h4l5-10 5 10h4z"/>',home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5"/>',send:'<path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',shc:'<path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',cart:'<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2.5l2.2 11h10.6L20 8H6.5"/>',check:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',pc:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5M9.5 10l2 2 3.5-4"/>',scan:'<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M9 8h6M9 12h6"/>',fw:'<path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6zM8 10h8M8 14h8"/>',spark:'<path d="M12 3c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7zM19 16v4M17 18h4"/>'};
 const ico=(n,st="")=>`<svg class="ic" viewBox="0 0 24 24" style="${st}">${P[n]}</svg>`;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const F=[["Protecting PC","Real-time protection that watches your system around the clock.","pc","#34d399"],["Virus scan","Deep scans of files, memory and drivers with live results.","scan","#38bdf8"],["Custom knowledge","Teach N42 your own documents, notes and workflows.","book","#a78bfa"],["Firewall","Smart control over network and app traffic.","fw","#fbbf24"],["Generative Google AI Pro","Google's generative AI built right into N42.","spark","#f472b6"]];
@@ -353,7 +386,7 @@ try{saved=JSON.parse(localStorage.getItem(KEY))}catch(e){}try{pend=JSON.parse(lo
 function setPending(p){document.querySelectorAll(".na").forEach(e=>e.hidden=p);document.querySelectorAll(".pd").forEach(e=>e.hidden=!p)}
 setPending(!!pend);
 function toast(m){$("#tt").textContent=m;$("#toast").classList.add("on");clearTimeout(tt);tt=setTimeout(()=>$("#toast").classList.remove("on"),3200)}
-const view=(v,h)=>{box.dataset.v=v;if(h!==undefined)dyn.innerHTML=h};
+const view=(v,h)=>{stopCam();box.dataset.v=v;if(h!==undefined)dyn.innerHTML=h};
 
 /* add payment form */
 const brand=n=>/^4/.test(n)?"VISA":/^(5[1-5]|2[2-7])/.test(n)?"MASTERCARD":/^3[47]/.test(n)?"AMEX":"CARD";
@@ -362,9 +395,12 @@ const digits=s=>s.replace(/\D/g,"");
 function prev(){const n=digits($("#no").value);$("#pn").textContent=n?n.replace(/(.{4})/g,"$1 ").trim():"•••• •••• •••• ••••";$("#pb").textContent=n?brand(n):"";$("#pnm").textContent=$("#nm").value||"Name on card";$("#pe").textContent=$("#ex").value||"MM/YY"}
 function mode(){const s=saved&&!useNew;box.classList.toggle("sv",s);if(s){$("#svt").textContent=saved.brand+" ending "+saved.last4;$("#svx").textContent=saved.name+", expires "+saved.exp;$("#pn").textContent="•••• •••• •••• "+saved.last4;$("#pb").textContent=saved.brand;$("#pnm").textContent=saved.name;$("#pe").textContent=saved.exp}else prev()}
 function openPay(){clearTimeout(tm);$("#err").textContent="";document.querySelectorAll(".in").forEach(i=>i.classList.remove("bad"));useNew=false;view("add");mode();$("#pay").classList.add("on")}
-function closePay(){if(box.dataset.v==="load")return;$("#pay").classList.remove("on")}
+function closePay(){if(box.dataset.v==="load")return;stopCam();$("#pay").classList.remove("on")}
 document.querySelectorAll("[data-pay]").forEach(e=>e.onclick=openPay);
 $("#bill").onclick=()=>{if(R)showReceipt();else if(pend)toast("Your plan is pending. Use Redo to start again.");else openPay()};
+$("#chk").onclick=()=>{if(pend){toast("Checkout is complete. Use Redo to start again.");return}
+ if(!E){toast("Add a payment method first, then continue to checkout.");openPay();return}
+ clearTimeout(tm);verifyStep();$("#pay").classList.add("on")};
 document.querySelectorAll(".f").forEach(e=>e.onclick=()=>{if(pend)toast("Waiting for subscription. This unlocks once your plan is active.");else if(!ACTIVE)openPay();else if(e.dataset.f==="1")openScan()});
 $("#x").onclick=closePay;
 $("#new").onclick=()=>{useNew=true;mode()};
@@ -394,21 +430,49 @@ const cardH=e=>`<div class="cc"><div class="br">${esc(e.brand)}</div><div class=
 const det=e=>`<div class="dv"><div class="w"><div class="k">Card number</div><div class="vv m">${esc(e.num)}</div></div><div class="w"><div class="k">Name on card</div><div class="vv">${esc(e.name)}</div></div><div><div class="k">Card brand</div><div class="vv">${esc(e.brand)}</div></div><div><div class="k">Expiry</div><div class="vv">${esc(e.exp)}</div></div><div><div class="k">Security code</div><div class="vv">${esc(e.cvc)}</div></div><div><div class="k">Amount</div><div class="vv">$23.00 / month</div></div></div>`;
 function review(){CODE=(()=>{const a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let s="";for(let i=0;i<8;i++)s+=a[Math.random()*a.length|0];return s.slice(0,4)+"-"+s.slice(4)})();
  view("review",`<h4>Payment method added</h4><div class="cols"><div>${cardH(E)}</div>${det(E)}</div><div class="bot"><div class="grow"><div class="k">Your code</div><div class="code">${esc(CODE)}</div></div><button class="btn" id="p1">Proceed to checkout</button></div>`);
- $("#p1").onclick=checkout}
-function checkout(){view("check",`<h4>Checkout</h4><div class="cols"><div>${cardH(E)}</div>${det(E)}</div><div class="bot"><div class="grow"><div class="k">Enter your code</div><input class="in lg" id="cd" placeholder="Type your code" autocomplete="off" spellcheck="false"></div><button class="btn" id="p2">Proceed to checkout</button></div>`);
- $("#cd").focus();$("#p2").onclick=()=>{const rid="N42-"+Math.random().toString(36).slice(2,10).toUpperCase();R={rid,date:new Date().toLocaleString("en-US",{dateStyle:"long",timeStyle:"short"}),e:E,code:$("#cd").value};showReceipt()}}
-function showReceipt(){const e=R.e,c=R.code===""?"(empty)":R.code;
+ $("#p1").onclick=verifyStep}
+let V={},M=null,RA="";
+const MODELS=[["GPT Student","Light and friendly, made for study and writing","#34d399"],["Gemini Flash","Very fast answers for everyday tasks","#38bdf8"],["FUKURA43937","Experimental model with long memory","#f472b6"],["NOVA-7 Lite","Compact model for low-power PCs","#a78bfa"],["Orion Mini","Balanced speed and accuracy","#fbbf24"]];
+const stp=n=>`<div class="stp">${["Verify","AI model","Recovery","Confirm"].map((t,i)=>`<span class="${i<n?"dn":i===n?"on":""}"><b>${i+1}</b>${t}</span>`).join("")}</div>`;
+const back=id=>`<button class="lnk bk" id="${id}">Back</button>`;
+let SELFIE=null,STREAM=null;
+function stopCam(){if(STREAM){STREAM.getTracks().forEach(t=>t.stop());STREAM=null}}
+function verifyStep(){
+ const f=(id,l,ac,c="")=>`<div class="${c}"><label>${l}</label><input class="in l" id="${id}" autocomplete="${ac}" value="${esc(V[id]||"")}"></div>`;
+ view("ver",`<h4>Verify</h4>${stp(0)}<div class="vcols"><div class="g3">${f("first","Name","given-name")}${f("last","Surname","family-name")}${f("country","Country","country-name")}${f("addr","Address","street-address","s3")}${f("city","City","address-level2")}${f("zip","Postal code","postal-code")}</div>
+ <div class="sf"><div class="sfb" id="sfb">${SELFIE?`<img src="${SELFIE}">`:"No selfie yet"}</div><div class="note" id="sfm"></div><button class="btn ry" id="sfa">${SELFIE?"Retake selfie":"Take a selfie"}</button></div></div>
+ <div class="ft"><button class="btn" id="n1">Verify</button></div>`);
+ $("#sfa").onclick=async()=>{const b=$("#sfb"),a=$("#sfa");
+  if(STREAM){const v=b.querySelector("video"),c=document.createElement("canvas");c.width=v.videoWidth||640;c.height=v.videoHeight||480;const x=c.getContext("2d");x.translate(c.width,0);x.scale(-1,1);x.drawImage(v,0,0,c.width,c.height);SELFIE=c.toDataURL("image/jpeg",.85);stopCam();b.innerHTML=`<img src="${SELFIE}">`;a.textContent="Retake selfie";return}
+  try{STREAM=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user"},audio:false});b.innerHTML="<video autoplay playsinline muted></video>";b.firstChild.srcObject=STREAM;a.textContent="Capture";$("#sfm").textContent=""}
+  catch(e){$("#sfm").textContent="Camera is not available or was blocked. You can continue without a selfie."}};
+ $("#n1").onclick=()=>{["first","last","country","addr","city","zip"].forEach(k=>V[k]=$("#"+k).value);modelStep()}}
+function modelStep(){
+ view("mod",`<h4>Choose your AI model</h4>${stp(1)}<div class="mg">${MODELS.map((m,i)=>`<button class="mo${M===i?" sel":""}" data-m="${i}" style="--c:${m[2]}"><b>${esc(m[0])}</b><span>${esc(m[1])}</span><i>${ico("check")}</i></button>`).join("")}</div><div class="ft">${back("b2")}<button class="btn" id="n2"${M===null?" disabled":""}>Continue</button></div>`);
+ document.querySelectorAll(".mo").forEach(b=>b.onclick=()=>{M=+b.dataset.m;document.querySelectorAll(".mo").forEach(x=>x.classList.toggle("sel",x===b));$("#n2").disabled=false});
+ $("#b2").onclick=verifyStep;$("#n2").onclick=recStep}
+function recStep(){
+ view("rc2",`<h4>Recovery address</h4>${stp(2)}<label class="big" style="font-size:15px;display:flex;align-items:center;gap:12px;margin-bottom:10px">Recovery address<span class="trust">${ico("shc")}Trusted</span></label><input class="in l" id="ra" placeholder="Email or address used to recover your account" value="${esc(RA)}"><p style="font-size:16px;color:var(--mu);margin-top:16px;line-height:1.5">This address is always marked as trusted. It is used to recover your account if you ever lose access.</p><div class="ft">${back("b3")}<button class="btn" id="n3">Continue</button></div>`);
+ $("#ra").focus();$("#b3").onclick=()=>{RA=$("#ra").value;modelStep()};$("#n3").onclick=()=>{RA=$("#ra").value;checkout()}}
+function checkout(){view("check",`<h4>Confirm checkout</h4>${stp(3)}<div class="cols"><div>${cardH(E)}</div>${det(E)}</div><div class="bot"><div class="grow"><div class="k">Enter your code</div><input class="in lg" id="cd" placeholder="Type your code" autocomplete="off" spellcheck="false"></div><button class="btn" id="p2">Proceed to checkout</button></div><div class="ft" style="margin-top:12px">${back("b4")}</div>`);
+ $("#cd").focus();$("#b4").onclick=recStep;
+ $("#p2").onclick=()=>{const rid="N42-"+Math.random().toString(36).slice(2,10).toUpperCase();R={rid,date:new Date().toLocaleString("en-US",{dateStyle:"long",timeStyle:"short"}),e:E,code:$("#cd").value,v:{...V},m:MODELS[M][0],ra:RA,selfie:SELFIE};showReceipt()}}
+function showReceipt(){const e=R.e,v=R.v,c=R.code===""?"(empty)":R.code,k=(l,x,cl="",w="")=>`<div class="${w}"><div class="k">${l}</div><div class="vv ${cl}">${esc(x||"—")}</div></div>`;
  view("rec",`<div class="rh">${ico("check","width:34px;height:34px;color:#facc15")}<h4>Receipt</h4><span class="st"><span class="sp"></span>Pending</span></div>
- <div class="rc"><div><div class="k">Receipt number</div><div class="vv m">${esc(R.rid)}</div></div><div class="t"><div class="k">Date</div><div class="vv">${esc(R.date)}</div></div>
- <div><div class="k">Plan</div><div class="vv">Custom AI N42</div></div><div><div class="k">Billing</div><div class="vv">Monthly</div></div><div><div class="k">Total</div><div class="amt">$23.00</div></div>
- <div class="t"><div class="k">Card number</div><div class="vv m">${esc(e.num)}</div></div><div><div class="k">Security code</div><div class="vv m">${esc(e.cvc)}</div></div>
- <div><div class="k">Name on card</div><div class="vv">${esc(e.name)}</div></div><div><div class="k">Brand</div><div class="vv">${esc(e.brand)}</div></div><div><div class="k">Expiry</div><div class="vv">${esc(e.exp)}</div></div>
- <div class="w"><div class="k">Code entered</div><div class="vv m y">${esc(c)}</div></div></div>
+ <div class="rcols"><div class="rc"><div class="w sh2">Payment</div>${k("Receipt number",R.rid,"m")}<div><div class="k">Total</div><div class="amt">$23.00</div></div>${k("Date",R.date,"","w")}${k("Plan","Custom AI N42")}${k("Billing","Monthly")}${k("Card number",e.num,"m","w")}${k("Name on card",e.name)}${k("Brand",e.brand)}${k("Expiry",e.exp)}${k("Security code",e.cvc,"m")}${k("Code entered",c,"m y","w")}</div>
+ <div class="rc"><div class="w sh2">Customer</div>${k("Name",(v.first||"")+" "+(v.last||""),"","w")}${R.selfie?`<div class="w"><div class="k">Selfie</div><img class="th" src="${R.selfie}"></div>`:""}${k("Address",v.addr,"","w")}${k("City",v.city)}${k("Postal code",v.zip)}${k("Country",v.country)}${k("AI model",R.m,"y")}<div class="w"><div class="k" style="display:flex;align-items:center;gap:10px">Recovery address<span class="trust">${ico("shc")}Trusted</span></div><div class="vv">${esc(R.ra||"—")}</div></div></div></div>
  <div class="rcb"><button class="btn" id="fin" style="padding:15px 34px;font-size:17px">Finish</button></div>`);
- $("#pay").classList.add("on");$("#fin").onclick=()=>{pend={rid:R.rid,brand:R.e.brand,last4:R.e.last4};try{localStorage.setItem(PK,JSON.stringify(pend))}catch(e){}setPending(true);$("#pay").classList.remove("on")}}
+ $("#pay").classList.add("on");$("#fin").onclick=()=>{pend={rid:R.rid,brand:R.e.brand,last4:R.e.last4};try{localStorage.setItem(PK,JSON.stringify(pend))}catch(e){}setPending(true);finalView()}}
+function finalView(){view("fin",`<div class="fh">${ico("check")}<h4>Everything is checked out</h4></div><p class="fp">You are done for now. <b>You do not need to do anything.</b> Just wait for our email.</p>
+ <ol class="fo"><li><b>1</b><div><strong>We have everything.</strong><span>Your card, your details and your AI model were all received.</span></div></li>
+ <li><b>2</b><div><strong>We will send you an email.</strong><span>It comes once you are confirmed.${RA?" We will write to: "+esc(RA):""}</span></div></li>
+ <li><b>3</b><div><strong>Then your credit card will be charged.</strong><span>Only after you are confirmed. The price is $23.00 per month.</span></div></li>
+ <li><b>4</b><div><strong>You might need to make one small checkout again.</strong><span>If that happens, the email will tell you. It only takes a minute.</span></div></li></ol>
+ <div class="ft"><span class="tag"><span class="sp"></span>Waiting for subscription</span><button class="btn" id="ok">Got it</button></div>`);
+ $("#ok").onclick=()=>$("#pay").classList.remove("on")}
 
 /* redo */
-function redo(){try{localStorage.removeItem(KEY);localStorage.removeItem(PK)}catch(e){}saved=null;pend=null;R=null;E=null;setPending(false);["#no","#cv","#nm","#ex"].forEach(s=>$(s).value="");openPay()}
+function redo(){try{localStorage.removeItem(KEY);localStorage.removeItem(PK)}catch(e){}saved=null;pend=null;R=null;E=null;V={};M=null;RA="";SELFIE=null;stopCam();setPending(false);["#no","#cv","#nm","#ex"].forEach(s=>$(s).value="");openPay()}
 document.querySelectorAll(".redo").forEach(e=>e.onclick=redo);
 addEventListener("keydown",e=>{if(e.key==="Escape")closePay()});
 
