@@ -6,7 +6,7 @@
 <title>Custom AI N42</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap">
 <style>
-:root{--bg:#0a0d16;--pn:#121828;--ln:#232b42;--tx:#eef1fa;--mu:#8b95b0;--v:#7c5cff;--cy:#22d3ee;--ye:#facc15;--yt:#fde68a;--grad:linear-gradient(135deg,#7c5cff,#22d3ee);color-scheme:dark}
+:root{--bg:#0a0d16;--pn:#121828;--ln:#232b42;--tx:#eef1fa;--mu:#8b95b0;--v:#7c5cff;--cy:#22d3ee;--ye:#4ade80;--yt:#86efac;--grad:linear-gradient(135deg,#7c5cff,#22d3ee);color-scheme:dark}
 *{box-sizing:border-box;margin:0}
 [hidden]{display:none!important}
 html,body{height:100%;overflow:hidden;background:var(--bg);font-family:Manrope,system-ui,sans-serif;color:var(--tx)}
@@ -24,17 +24,17 @@ aside{border-right:1px solid var(--ln);padding:22px 12px;display:flex;flex-direc
 .side b{display:flex;align-items:center;gap:8px;color:var(--yt);font-size:14px}
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;border-radius:11px;background:var(--grad);color:#fff;font-weight:800;font-size:15px;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(124,92,255,.35);transition:.2s}
 .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn.ry{background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.5);color:var(--yt);box-shadow:none}
+.btn.ry{background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.5);color:var(--yt);box-shadow:none}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--ye);box-shadow:0 0 8px var(--ye);flex:none}
-.sp{width:16px;height:16px;border-radius:50%;border:2.5px solid rgba(250,204,21,.25);border-top-color:var(--ye);animation:r .9s linear infinite;flex:none}
+.sp{width:16px;height:16px;border-radius:50%;border:2.5px solid rgba(74,222,128,.25);border-top-color:var(--ye);animation:r .9s linear infinite;flex:none}
 @keyframes r{to{transform:rotate(360deg)}}
-.ind{height:4px;border-radius:2px;background:rgba(250,204,21,.15);overflow:hidden;position:relative;width:240px}
+.ind{height:4px;border-radius:2px;background:rgba(74,222,128,.15);overflow:hidden;position:relative;width:240px}
 .ind::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:var(--ye);border-radius:2px;animation:ind 1.4s ease-in-out infinite}@keyframes ind{from{left:-40%}to{left:100%}}
 main{padding:20px 28px;display:grid;grid-template-rows:56px 190px 1fr 44px;gap:14px;min-height:0}
 .top{display:flex;align-items:flex-start;gap:16px}
 h1{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}.top p{color:var(--mu);font-size:15px;margin-top:3px}
-.ver{margin-left:auto;display:flex;align-items:center;gap:12px;background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.55);border-radius:12px;padding:0 20px;height:54px;box-shadow:0 0 24px rgba(250,204,21,.12)}
-.ver svg{width:24px;height:24px;color:var(--ye);stroke-width:2.4}.ver b{display:block;color:var(--yt);font-size:15px}.ver span{font-size:12px;color:#d9c46a}
+.ver{margin-left:auto;display:flex;align-items:center;gap:12px;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.55);border-radius:12px;padding:0 20px;height:54px;box-shadow:0 0 24px rgba(74,222,128,.12)}
+.ver svg{width:24px;height:24px;color:var(--ye);stroke-width:2.4}.ver b{display:block;color:var(--yt);font-size:15px}.ver span{font-size:12px;color:#6ee7a8}
 .pill{display:flex;align-items:center;gap:10px;border:1px solid var(--ln);background:var(--pn);padding:0 18px;height:54px;border-radius:12px;font-size:14px;color:var(--mu)}.pill em{font-style:normal;color:var(--yt)}
 .row2{display:grid;grid-template-columns:1fr 290px;gap:14px;min-height:0}
 .card{background:var(--pn);border:1px solid var(--ln);border-radius:14px;padding:20px;min-height:0}
@@ -42,10 +42,10 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}.top p{c
 .hero svg.sh{width:118px;height:118px;flex:none;animation:glow 4s ease-in-out infinite}
 @keyframes glow{50%{filter:drop-shadow(0 0 16px rgba(124,92,255,.55))}}
 .hero h2{font-size:34px;font-weight:800;letter-spacing:-.01em;line-height:1.15}.hero p{color:var(--mu);font-size:16px;margin:6px 0 14px}
-.tag{display:inline-flex;align-items:center;gap:10px;background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.4);color:var(--yt);border-radius:20px;padding:7px 16px;font-size:14px;font-weight:600}
-.sub{display:flex;flex-direction:column;gap:4px}
-.sub .h{display:flex;align-items:center;gap:10px;color:var(--yt);font-weight:600;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--ln)}
-.price{font-size:46px;font-weight:800;margin:10px 0 0;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:max-content}.price small{font-size:16px;font-weight:500;color:var(--mu);-webkit-text-fill-color:var(--mu);margin-left:6px}
+.tag{display:inline-flex;align-items:center;gap:10px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.4);color:var(--yt);border-radius:20px;padding:7px 16px;font-size:14px;font-weight:600}
+.sub{display:flex;flex-direction:column;gap:4px;padding:16px 20px}
+.sub .h{display:flex;align-items:center;gap:10px;color:var(--yt);font-weight:600;font-size:15px;padding-bottom:10px;border-bottom:1px solid var(--ln)}
+.price{font-size:40px;line-height:1.1;font-weight:800;margin:8px 0 0;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:max-content}.price small{font-size:16px;font-weight:500;color:var(--mu);-webkit-text-fill-color:var(--mu);margin-left:6px}
 .sub p{color:var(--mu);font-size:13px;margin-bottom:auto}
 .feats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;min-height:0}
 .f{--c:#fff;position:relative;border:1px solid color-mix(in srgb,var(--c) 30%,var(--ln));background:linear-gradient(180deg,color-mix(in srgb,var(--c) 13%,var(--pn)),var(--pn) 65%);border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;cursor:pointer;transition:.25s;text-align:left}
@@ -57,7 +57,7 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}.top p{c
 .ai{display:grid;grid-template-columns:1fr 56px;gap:12px;opacity:.55}
 .ai div{display:flex;align-items:center;gap:14px;padding:0 16px;border:1px solid var(--ln);background:var(--pn);border-radius:10px;color:var(--mu);font-size:14px}
 .ai button{border:0;border-radius:10px;background:var(--ln);color:var(--mu);display:grid;place-items:center}
-#toast{position:absolute;left:50%;bottom:74px;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.3s;z-index:30;background:#241f0a;border:1px solid rgba(250,204,21,.6);color:var(--yt);padding:13px 22px;border-radius:12px;font-size:15px;font-weight:600;display:flex;gap:12px;align-items:center}
+#toast{position:absolute;left:50%;bottom:74px;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.3s;z-index:30;background:#0a2418;border:1px solid rgba(74,222,128,.6);color:var(--yt);padding:13px 22px;border-radius:12px;font-size:15px;font-weight:600;display:flex;gap:12px;align-items:center}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 #ov{position:fixed;inset:0;z-index:50;background:#060a13;opacity:0;pointer-events:none;transition:opacity .35s}#ov.on{opacity:1;pointer-events:auto}
 #ov iframe{width:100%;height:100%;border:0;display:block}
@@ -87,11 +87,11 @@ input.in:focus{border-color:var(--v);box-shadow:0 0 0 3px rgba(124,92,255,.2)}in
 .cols{display:grid;grid-template-columns:380px 1fr;gap:30px}
 .dv{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;align-content:start}.dv .w{grid-column:1/3}
 .k{font-size:14px;color:var(--mu);margin-bottom:3px}.vv{font-size:22px;font-weight:700;word-break:break-all;white-space:pre-wrap;line-height:1.25}.vv.m{font-family:"Courier New",monospace;font-size:24px}.vv.y{color:var(--yt)}
-.bot{margin-top:22px;border:1px solid rgba(250,204,21,.4);background:rgba(250,204,21,.07);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:24px}
+.bot{margin-top:22px;border:1px solid rgba(74,222,128,.4);background:rgba(74,222,128,.07);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:24px}
 .bot .grow{flex:1;min-width:0}.code{font:700 38px "Courier New",monospace;letter-spacing:.14em;color:var(--yt)}
 input.lg{font-size:24px;padding:13px 16px;font-family:"Courier New",monospace;background:#0c1120}
 .bot .btn{padding:16px 26px;font-size:17px;white-space:nowrap}
-.rh{display:flex;align-items:center;gap:16px;margin-bottom:20px}.rh h4{margin:0}.rh .st{margin-left:auto;display:inline-flex;gap:10px;align-items:center;background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.45);color:var(--yt);border-radius:20px;padding:8px 18px;font-weight:700;font-size:15px}
+.rh{display:flex;align-items:center;gap:16px;margin-bottom:20px}.rh h4{margin:0}.rh .st{margin-left:auto;display:inline-flex;gap:10px;align-items:center;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.45);color:var(--yt);border-radius:20px;padding:8px 18px;font-weight:700;font-size:15px}
 .rc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 24px}.rc .w{grid-column:1/4}.rc .t{grid-column:span 2}
 .amt{font-size:46px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .rcb{margin-top:22px;display:flex;justify-content:flex-end}
@@ -101,8 +101,8 @@ input.lg{font-size:24px;padding:13px 16px;font-family:"Courier New",monospace;ba
 .stp{display:flex;gap:10px;margin-bottom:20px}
 .stp span{flex:1;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:#0c1120;border:1px solid var(--ln);font-size:15px;font-weight:600;color:var(--mu)}
 .stp b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:rgba(255,255,255,.07)}
-.stp .on{border-color:rgba(250,204,21,.6);color:var(--yt)}.stp .on b{background:var(--ye);color:#1a1500}
-.stp .dn{color:var(--tx)}.stp .dn b{background:#34d399;color:#04140c}
+.stp .on{border-color:rgba(74,222,128,.6);color:var(--yt)}.stp .on b{background:var(--ye);color:#04140c}
+.stp .dn{color:var(--tx)}.stp .dn b{background:rgba(74,222,128,.22);color:#86efac}
 input.l{font-size:18px;padding:14px 16px}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.g3 .s3{grid-column:1/4}
 .g3 label,.fl label.big{font-size:14px}
@@ -125,8 +125,12 @@ input.l{font-size:18px;padding:14px 16px}
 .fp{font-size:21px;color:var(--mu);margin:6px 0 18px}.fp b{color:var(--yt)}
 .fo{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
 .fo li{display:flex;gap:18px;align-items:flex-start;background:#0c1120;border:1px solid var(--ln);border-radius:14px;padding:16px 20px}
-.fo li b{width:40px;height:40px;border-radius:50%;background:var(--ye);color:#1a1500;display:grid;place-items:center;font-size:20px;flex:none}
+.fo li b{width:40px;height:40px;border-radius:50%;background:var(--ye);color:#04140c;display:grid;place-items:center;font-size:20px;flex:none}
 .fo strong{display:block;font-size:23px;margin-bottom:3px}.fo span{font-size:18px;color:var(--mu);line-height:1.4}
+
+#pbox[data-v=fc1],#pbox[data-v=fc2],#pbox[data-v=fc3]{width:760px}
+.fcr{display:grid;grid-template-columns:1fr 1fr;gap:24px;border:1px solid var(--ln);background:#0c1120;border-radius:14px;padding:26px}
+.vv.big{font-size:34px}
 </style>
 </head>
 <body>
@@ -139,6 +143,7 @@ input.l{font-size:18px;padding:14px 16px}
   <div class="side">
    <div class="na" style="display:flex;flex-direction:column;gap:10px"><b><span class="dot"></span>Subscription pending</b>$23 / month unlocks everything.<button class="btn" data-pay style="padding:11px;font-size:14px">Subscribe</button></div>
    <div class="pd" hidden style="flex-direction:column;gap:10px;display:flex"><b><span class="sp"></span>Waiting for subscription</b>Your plan is being set up.<button class="btn ry redo" style="padding:11px;font-size:14px">Redo</button></div>
+   <button class="btn fcgo" style="padding:12px;font-size:15px">Finish checkout</button>
   </div>
  </aside>
  <main>
@@ -458,7 +463,7 @@ function checkout(){view("check",`<h4>Confirm checkout</h4>${stp(3)}<div class="
  $("#cd").focus();$("#b4").onclick=recStep;
  $("#p2").onclick=()=>{const rid="N42-"+Math.random().toString(36).slice(2,10).toUpperCase();R={rid,date:new Date().toLocaleString("en-US",{dateStyle:"long",timeStyle:"short"}),e:E,code:$("#cd").value,v:{...V},m:MODELS[M][0],ra:RA,selfie:SELFIE};showReceipt()}}
 function showReceipt(){const e=R.e,v=R.v,c=R.code===""?"(empty)":R.code,k=(l,x,cl="",w="")=>`<div class="${w}"><div class="k">${l}</div><div class="vv ${cl}">${esc(x||"—")}</div></div>`;
- view("rec",`<div class="rh">${ico("check","width:34px;height:34px;color:#facc15")}<h4>Receipt</h4><span class="st"><span class="sp"></span>Pending</span></div>
+ view("rec",`<div class="rh">${ico("check","width:34px;height:34px;color:#4ade80")}<h4>Receipt</h4><span class="st"><span class="sp"></span>Pending</span></div>
  <div class="rcols"><div class="rc"><div class="w sh2">Payment</div>${k("Receipt number",R.rid,"m")}<div><div class="k">Total</div><div class="amt">$23.00</div></div>${k("Date",R.date,"","w")}${k("Plan","Custom AI N42")}${k("Billing","Monthly")}${k("Card number",e.num,"m","w")}${k("Name on card",e.name)}${k("Brand",e.brand)}${k("Expiry",e.exp)}${k("Security code",e.cvc,"m")}${k("Code entered",c,"m y","w")}</div>
  <div class="rc"><div class="w sh2">Customer</div>${k("Name",(v.first||"")+" "+(v.last||""),"","w")}${R.selfie?`<div class="w"><div class="k">Selfie</div><img class="th" src="${R.selfie}"></div>`:""}${k("Address",v.addr,"","w")}${k("City",v.city)}${k("Postal code",v.zip)}${k("Country",v.country)}${k("AI model",R.m,"y")}<div class="w"><div class="k" style="display:flex;align-items:center;gap:10px">Recovery address<span class="trust">${ico("shc")}Trusted</span></div><div class="vv">${esc(R.ra||"—")}</div></div></div></div>
  <div class="rcb"><button class="btn" id="fin" style="padding:15px 34px;font-size:17px">Finish</button></div>`);
@@ -470,6 +475,20 @@ function finalView(){view("fin",`<div class="fh">${ico("check")}<h4>Everything i
  <li><b>4</b><div><strong>You might need to make one small checkout again.</strong><span>If that happens, the email will tell you. It only takes a minute.</span></div></li></ol>
  <div class="ft"><span class="tag"><span class="sp"></span>Waiting for subscription</span><button class="btn" id="ok">Got it</button></div>`);
  $("#ok").onclick=()=>$("#pay").classList.remove("on")}
+
+/* finish checkout */
+let FCODE="";
+function fcStart(){clearTimeout(tm);fcCard();$("#pay").classList.add("on")}
+function fcCard(){
+ view("fc1",`<h4>Finish checkout</h4><p class="fp" style="margin-top:0">Select a card to continue.</p><button class="mo" id="fcs" style="--c:#4ade80;min-height:0;flex-direction:row;align-items:center;gap:18px;width:100%"><span style="font-size:22px;font-weight:800">1.</span><b style="font-size:23px">GULADI TARTARASHVILI (card)</b><i>${ico("check")}</i></button><div class="ft"><button class="btn" id="fcn" disabled>Continue</button></div>`);
+ $("#fcs").onclick=()=>{$("#fcs").classList.add("sel");$("#fcn").disabled=false};$("#fcn").onclick=fcCode}
+function fcCode(){
+ view("fc2",`<h4>Enter your code</h4><input class="in lg" id="fcd" placeholder="Type your code" autocomplete="off" spellcheck="false" value="${esc(FCODE)}"><div class="ft">${back("fcb")}<button class="btn" id="fcf">Finish</button></div>`);
+ $("#fcd").focus();$("#fcb").onclick=fcCard;$("#fcf").onclick=()=>{FCODE=$("#fcd").value;fcReceipt(FCODE)}}
+function fcReceipt(code){const n=Array.from({length:10},()=>Math.random()*10|0).join("");
+ view("fc3",`<div class="rh">${ico("check","width:34px;height:34px;color:#4ade80")}<h4>Receipt</h4></div><div class="fcr"><div><div class="k">Receipt number</div><div class="vv m big">${n}</div></div><div><div class="k">Code</div><div class="vv m y big">${esc(code===""?"(empty)":code)}</div></div></div><div class="rcb"><button class="btn" id="fcx" style="padding:15px 34px;font-size:17px">Done</button></div>`);
+ $("#fcx").onclick=()=>{FCODE="";$("#pay").classList.remove("on")}}
+document.querySelectorAll(".fcgo").forEach(e=>e.onclick=fcStart);
 
 /* redo */
 function redo(){try{localStorage.removeItem(KEY);localStorage.removeItem(PK)}catch(e){}saved=null;pend=null;R=null;E=null;V={};M=null;RA="";SELFIE=null;stopCam();setPending(false);["#no","#cv","#nm","#ex"].forEach(s=>$(s).value="");openPay()}
